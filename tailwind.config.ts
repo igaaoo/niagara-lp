@@ -19,16 +19,20 @@ const config = {
     },
     extend: {
       fontFamily: {
-        jost: ['Jost', 'sans-serif'],
-        'red-hat': ['Red Hat Text', 'sans-serif'],
-        cabin: ['Cabin', 'sans-serif'],
-        josefin: ['Josefin Sans', 'sans-serif'],
+        inter: ["var(--font-inter)"],
+        josefin: ["var(--font-josefin)"],
+        sans: ['var(--font-space-grotesk)'],
+        cabin: ['var(--font-cabin)'],
+        jost: ['var(--font-jost)'],
+        red_hat: ['var(--font-red-hat)'],
+        space_grotesk: ['var(--font-space-grotesk)'],
       },
       backgroundImage: {
         "main-bg": "url('/main.png')",
         "setup-bg": "url('/setup.jpg')",
-        "dark-2": "url('/bgDark.jpg')",
-        "dark-1": "url('/darkBg.jpg')",
+        "industry-bg": "url('/bg/solutions.jpg')",
+        "lema-bg": "url('/bg/lema1.jpg')",
+        "solutions-bg": "url('/bg/solutions.jpg')",
 
         "carousel-virtual-studios": "url('/carousel/virtualStudios.jpg')",
         "carousel-health": "url('/carousel/health.jpg')",
@@ -39,6 +43,12 @@ const config = {
         "carousel-retail": "url('/carousel/retail.png')",
         "carousel-safety": "url('/carousel/safety.jpeg')",
         "carousel-events": "url('/carousel/event.jpeg')",
+
+        "solutions-vr": "url('/solutions/vr.jpg')",
+        "solutions-ar": "url('/solutions/ar.jpg')",
+        "solutions-render": "url('/solutions/render.jpg')",
+
+
         "missions-bg": "url('/missions.jpg')",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

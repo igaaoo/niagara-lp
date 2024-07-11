@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -11,11 +9,6 @@ import {
 import { Button } from "./ui/button";
 
 const niches = [
-  {
-    title: "Estúdios Virtuais",
-    description: "Dê vida ao seu conteúdo com estúdios virtuais impressionantes e imersivos",
-    bgClass: "bg-carousel-virtual-studios"
-  },
   {
     title: "Saúde",
     description: "Transforme a saúde com simulações 3D realistas e ambientes interativos",
@@ -60,12 +53,12 @@ const niches = [
 
 export function Industry() {
   return (
-    <div className="flex flex-col w-full items-center md:py-10 justify-center bg-dark-2 bg-cover">
+    <div className="flex flex-col w-full items-center md:py-10 justify-center bg-industry-bg md:bg-cover">
       <div className=" p-8 md:p-4 md:mb-10 text-white">
-        <p className="m:text-2xl text-lg font-cabin font-semibold px-8 w-full text-center">
+        <p className="m:text-2xl text-lg font-medium px-8 w-full font-space_grotesk text-center">
           INDÚSTRIA
         </p>
-        <span className="md:text-5xl font-semibold text-2xl">Atendendo os seguintes nichos</span>
+        <span className="md:text-5xl font-bold font-space_grotesk text-2xl">Atendendo os seguintes nichos</span>
       </div>
 
       <Carousel

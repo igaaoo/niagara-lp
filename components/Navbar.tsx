@@ -19,7 +19,9 @@ import {
 import React from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { Ellipsis, EllipsisVertical, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+
+
 
 
 export function Navbar() {
@@ -47,13 +49,13 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-colors duration-300 ${(isScrolled || isMobile) ? 'bg-black' : 'bg-transparent'}`}>
+    <nav className={`fixed  w-full z-50 transition-colors duration-300 ${(isScrolled || isMobile) ? 'bg-black' : 'bg-transparent'}`}>
       <div className='px-4 md:px-8 flex  md:flex-row items-center justify-between pt-2 w-full relative'>
 
         <div className='flex justify-between w-full md:px-20 px-6'>
           <div className='flex items-center gap-2 py-2'>
             {/* <Image src="icon.png" width={35} height={35} alt='Niagara Studios' /> */}
-            <h1 className={`text-2xl md:text-2xl font-josefin font-semibold text-white whitespace-nowrap flex gap-1 tracking-wide`}>
+            <h1 className={`text-2xl md:text-2xl font-josefin text-white whitespace-nowrap flex gap-1 tracking-wide`}>
               NIAGARA STUDIOS
             </h1>
           </div>
@@ -237,7 +239,7 @@ export function Navbar() {
                 <button className='hover:text-amber-400 text-base font-medium font-red-hat focus:-text-amber-400'>PARCEIROS</button>
               </NavigationMenuList>
             </NavigationMenu>
-            <button className='bg-amber-600 hover:bg-amber-700 text-sm font-semibold font-red-hat px-4 py-0 grow ml-10 text-white'>
+            <button className='bg-orange-600 hover:bg-orange-700 text-sm font-semibold font-red-hat px-4 py-0 grow ml-10 text-white'>
               FALE CONOSCO
             </button>
           </div>

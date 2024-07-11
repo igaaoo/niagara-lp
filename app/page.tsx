@@ -4,6 +4,7 @@ import { Setup } from '@/components/Setup';
 import { Missions } from '@/components/Missions';
 import { Lema } from '@/components/Lema';
 import { Industry } from '@/components/Industry';
+import { Solutions } from '@/components/Solutions';
 
 
 
@@ -14,6 +15,7 @@ export default function Home() {
       <Main />
       <Lema />
       <Industry />
+      <Solutions />
       {/* <div className='h-8 bg-blue-900 backdrop-blur-lg z-10 blur-sm -mt-4 -mb-2 bg-opacity-30  '></div> */}
       {/* <Setup />
       <div className='h-8 bg-cyan-600 backdrop-blur-lg z-10 blur-md -mt-4 -mb-2 bg-opacity-30  '></div>
