@@ -20,11 +20,15 @@ import React from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
+import { useLanguageContext } from '@/context/LanguageContext';
+import Image from 'next/image';
 
 
 
 
 export function Navbar() {
+  const { language, setLanguage } = useLanguageContext();
+
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -241,6 +245,17 @@ export function Navbar() {
             </NavigationMenu>
             <button className='bg-orange-600 hover:bg-orange-700 text-sm font-semibold font-red-hat px-4 py-0 grow ml-10 text-white'>
               FALE CONOSCO
+            </button>
+
+            <button className='size-7 rounded-full  overflow-clip  border border-2 self-center '
+              onClick={() => setLanguage(language === 'en-us' ? 'pt-br' : 'en-us')}
+            >
+              {
+                language === 'en-us' ?
+                  <Image src='languages/en-us.png' width={40} height={40} alt='EN-US' className='object-fill w-full h-full' />
+                  :
+                  <Image src='languages/pt-br.png' width={40} height={40} alt='PT-BR' className='object-fill w-full h-full' />
+              }
             </button>
           </div>
 

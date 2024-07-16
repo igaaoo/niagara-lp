@@ -16,9 +16,19 @@ import { Button } from "./ui/button";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from "react";
+import { useLanguageContext } from "@/context/LanguageContext";
 
+const infoPt = {
+  title: "SOLUÇÕES",
+  description: "Onde o real se encontra com o virtual",
+};
 
-const niches = [
+const infoEn = {
+  title: "SOLUTIONS",
+  description: "Where the real meets the virtual",
+};
+
+const nichesPt = [
   {
     title: "Estúdios Virtuais",
     description: "Dê vida ao seu conteúdo com estúdios virtuais impressionantes e imersivos",
@@ -39,14 +49,42 @@ const niches = [
     description: "Encante com visualizações deslumbrantes de produtos",
     bgClass: "bg-solutions-render"
   },
-
 ];
+
+const nichesEn = [
+  {
+    title: "Virtual Studios",
+    description: "Bring your content to life with stunning and immersive virtual studios",
+    bgClass: "bg-carousel-virtual-studios"
+  },
+  {
+    title: "Virtual Reality",
+    description: "Enhance skills in ultra-realistic environments",
+    bgClass: "bg-solutions-vr"
+  },
+  {
+    title: "Augmented Reality",
+    description: "Maximize experiences with real-time interactions",
+    bgClass: "bg-solutions-ar"
+  },
+  {
+    title: "Renders",
+    description: "Delight with stunning product visualizations",
+    bgClass: "bg-solutions-render"
+  }
+];
+
 
 export function Solutions() {
   const [isMobile, setIsMobile] = useState(false);
 
+  const { language } = useLanguageContext();
+
+  const niches = language === "en-us" ? nichesEn : nichesPt;
+  const info = language === "en-us" ? infoEn : infoPt;
+
   useEffect(() => {
-    if (window != undefined && window.innerWidth < 768) {
+    if (window != undefined && window.innerWidth < 800) {
       setIsMobile(true);
     }
   }, []);
@@ -55,10 +93,12 @@ export function Solutions() {
   return (
     <div className="flex flex-col w-full items-center md:py-10 justify-center  bg-gradient-to-t from-white to-slate-200">
       <div className="p-8 md:p-4 md:mb-10 text-black">
-        <p className="m:text-2xl text-lg  font-medium px-8 w-full font-space_grotesk text-center">
-          SOLUÇÕES
+        <p className="m:text-2xl text-lg font-bold font-medium px-8 w-full  text-center text-orange-600">
+          {info.title}
         </p>
-        <span className="md:text-5xl font-bold font-space_grotesk text-2xl">Onde o real se encontra com o virtual</span>
+        <span className="md:text-5xl font-bold  text-2xl">
+          {info.description}
+        </span>
       </div>
 
       {
@@ -77,7 +117,11 @@ export function Solutions() {
                         {niches[0].description}
                       </p>
                       <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
-                        Saiba Mais
+                        {
+                          language === "pt-br" ?
+                            "SAIBA MAIS" :
+                            "DISCOVER MORE"
+                        }
                       </Button>
                     </div>
                   </CardContent>
@@ -90,7 +134,11 @@ export function Solutions() {
                         {niches[3].description}
                       </p>
                       <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
-                        Saiba Mais
+                        {
+                          language === "pt-br" ?
+                            "SAIBA MAIS" :
+                            "DISCOVER MORE"
+                        }
                       </Button>
                     </div>
                   </CardContent>
@@ -109,7 +157,11 @@ export function Solutions() {
                           {niches[1].description}
                         </p>
                         <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold">
-                          Saiba Mais
+                          {
+                            language === "pt-br" ?
+                              "SAIBA MAIS" :
+                              "DISCOVER MORE"
+                          }
                         </Button>
                       </div>
                     </CardContent>
@@ -125,7 +177,11 @@ export function Solutions() {
                           {niches[2].description}
                         </p>
                         <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
-                          Saiba Mais
+                          {
+                            language === "pt-br" ?
+                              "SAIBA MAIS" :
+                              "DISCOVER MORE"
+                          }
                         </Button>
                       </div>
                     </CardContent>
@@ -153,7 +209,11 @@ export function Solutions() {
                           {niche.description}
                         </span>
                         <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
-                          Saiba Mais
+                          {
+                            language === "pt-br" ?
+                              "SAIBA MAIS" :
+                              "DISCOVER MORE"
+                          }
                         </Button>
                       </CardContent>
                     </Card>

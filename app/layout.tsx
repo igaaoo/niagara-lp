@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
-import { Inter, Josefin_Sans, Cabin, Jost, Red_Hat_Display, Space_Grotesk } from 'next/font/google';
+import { Inter, Josefin_Sans, Space_Grotesk, Rubik } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
+import LanguageContextProvider from '@/context/LanguageContextProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -15,28 +16,17 @@ const josefin = Josefin_Sans({
   variable: '--font-josefin',
 });
 
-const cabin = Cabin({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-cabin',
-});
-
-const jost = Jost({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-jost',
-});
-
-const red_hat = Red_Hat_Display({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-red-hat',
-});
-
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-space-grotesk',
+});
+
+
+const rubik = Rubik({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-rubik',
 });
 
 export const metadata: Metadata = {
@@ -50,14 +40,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
-      <body className={`
-      ${inter.variable} ${josefin.variable}
-          ${cabin.variable} ${jost.variable} ${red_hat.variable} ${space_grotesk.variable}
-        font-sans`}>
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <LanguageContextProvider>
+      <html lang="pt-BR">
+        <body className={`${inter.variable} ${josefin.variable} ${rubik.variable} font-sans`}>
+          <Navbar />
+          {children}
+        </body>
+      </html>
+    </LanguageContextProvider>
   );
 }

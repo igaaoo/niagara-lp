@@ -20,18 +20,16 @@ const config = {
     extend: {
       fontFamily: {
         inter: ["var(--font-inter)"],
-        josefin: ["var(--font-josefin)"],
-        sans: ['var(--font-space-grotesk)'],
-        cabin: ['var(--font-cabin)'],
-        jost: ['var(--font-jost)'],
-        red_hat: ['var(--font-red-hat)'],
+        sans: ['var(--font-rubik)'],
         space_grotesk: ['var(--font-space-grotesk)'],
+        rubik: ['var(--font-rubik)'],
+        josefin: ['var(--font-josefin)'],
       },
       backgroundImage: {
         "main-bg": "url('/main.png')",
         "setup-bg": "url('/setup.jpg')",
         "industry-bg": "url('/bg/solutions.jpg')",
-        "lema-bg": "url('/bg/lema1.jpg')",
+        "lema-bg": "url('/bg/lema.png')",
         "solutions-bg": "url('/bg/solutions.jpg')",
 
         "carousel-virtual-studios": "url('/carousel/virtualStudios.jpg')",
@@ -42,7 +40,7 @@ const config = {
         "carousel-industry": "url('/carousel/industry.jpg')",
         "carousel-retail": "url('/carousel/retail.png')",
         "carousel-safety": "url('/carousel/safety.jpeg')",
-        "carousel-events": "url('/carousel/event.jpeg')",
+        "carousel-events": "url('/carousel/events.jpg')",
 
         "solutions-vr": "url('/solutions/vr.jpg')",
         "solutions-ar": "url('/solutions/ar.jpg')",
@@ -104,8 +102,16 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "up-and-down": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-40%)" },
+
+        },
+
       },
       animation: {
+        // up and down smooth indicating to scroll down
+        "up-and-down": "up-and-down 4s ease-in-out infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
