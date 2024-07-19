@@ -15,7 +15,7 @@ export function Lema() {
     <div className="flex w-full items-center flex-col md:flex-row text-center shadow-lg p-4 bg-zinc-50   text-black  md:justify-between">
 
       <div className="flex flex-col text-left md:gap-4 gap-2 py-12  px-4  md:py-10 w-full col-span-4 md:px-20 ">
-        <h2 className="md:text-xl font-medium ">
+        <h2 className="md:text-xl font-medium text-orange-600">
           {language === "pt-br" ?
             "TRANSFORME SUAS IDEIAS EM REALIDADE" :
             "TURN YOUR IDEAS INTO REALITY"}

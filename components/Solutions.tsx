@@ -96,7 +96,7 @@ export function Solutions() {
       id="solutions"
     >
       <div className="p-8 md:p-4 md:mb-10 text-black">
-        <p className="m:text-2xl text-lg font-bold font-medium px-8 w-full  text-center text-orange-600">
+        <p className=" text-lg font-bold font-medium px-8 w-full  text-center text-orange-600">
           {info.title}
         </p>
         <span className="md:text-5xl font-bold  text-2xl">

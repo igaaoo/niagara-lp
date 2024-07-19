@@ -1,4 +1,5 @@
 "use client";
+import Autoplay from "embla-carousel-autoplay";
 
 import {
   Carousel,
@@ -22,7 +23,7 @@ export function Clients() {
         {/* <p className="m:text-2xl text-lg  font-medium px-8 w-full  text-center">
           WHO TRUST
         </p> */}
-        <p className="md:text-4xl font-bold  text-2xl text-orange-600">
+        <p className=" font-bold  text-2xl text-orange-600">
           {language === "pt-br" ? "Quem Confia" : "Who Trust"}
         </p>
         <span className="font-bold  text-2xl">
@@ -35,10 +36,19 @@ export function Clients() {
         className="w-[90vw]"
         opts={{
           align: "center",
-
-          loop: true,
-
+          loop: true
         }}
+
+        plugins={[
+          Autoplay({
+            delay: 2000,
+            playOnInit: true,
+            stopOnFocusIn: false,
+            stopOnInteraction: false,
+            stopOnLastSnap: false,
+            stopOnMouseEnter: true,
+          }),
+        ]}
       >
         <CarouselContent>
           <CarouselItem className=" basis-1/3 md:basis-1/5 w-96" >
@@ -59,6 +69,10 @@ export function Clients() {
 
           <CarouselItem className="basis-1/3 md:basis-1/5 w-96" >
             <Image src="clients/safelive.png" alt="Safelive" width={200} height={100} />
+          </CarouselItem>
+
+          <CarouselItem className="basis-1/3 md:basis-1/5 w-96" >
+            <Image src="clients/montana.png" alt="Montana" width={200} height={100} />
           </CarouselItem>
         </CarouselContent>
         <CarouselPrevious />

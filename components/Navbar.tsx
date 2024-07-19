@@ -212,7 +212,12 @@ export function Navbar() {
               </NavigationMenuList>
             </NavigationMenu>
             <button className='bg-orange-600 hover:bg-orange-700 text-sm font-semibold font-red-hat px-4 py-0 grow ml-10 text-white'>
-              FALE CONOSCO
+              {
+                language === 'pt-br' ?
+                  'FALE CONOSCO'
+                  :
+                  'CONTACT US'
+              }
             </button>
 
             <button className='size-7 rounded-full  overflow-clip  border border-2 self-center '

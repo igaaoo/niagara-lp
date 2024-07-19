@@ -96,7 +96,7 @@ export function Industry() {
       id="industry"
     >
       <div className=" p-8 md:p-4 md:mb-10 text-white">
-        <p className="m:text-2xl text-lg font-medium px-8 w-full  text-center text-orange-600">
+        <p className="text-lg font-medium px-8 w-full  text-center text-orange-600">
           {
             language === "pt-br" ?
               "INDÚSTRIA" :
