@@ -12,7 +12,7 @@ export function Lema() {
   const { language } = useLanguageContext();
 
   return (
-    <div className="flex w-full items-center flex-col md:flex-row text-center shadow-lg p-4 bg-orange-500   text-white  md:justify-between">
+    <div className="flex w-full items-center flex-col md:flex-row text-center shadow-lg p-4 bg-zinc-50   text-black  md:justify-between">
 
       <div className="flex flex-col text-left md:gap-4 gap-2 py-12  px-4  md:py-10 w-full col-span-4 md:px-20 ">
         <h2 className="md:text-xl font-medium ">
@@ -39,7 +39,7 @@ export function Lema() {
         <ResizablePanel defaultSize={50}>
           <Image width={750} height={1334} alt="" src='/render2.png' className='w-full object-top  object-cover h-[60vh] ' />
         </ResizablePanel>
-        <p className="absolute  bg-orange-700 bg-opacity-50 p-2 w-fit font-semibold">
+        <p className="absolute  bg-black bg-opacity-50 p-2 w-fit font-semibold text-white">
           {language === "pt-br" ? "ARRASTE PARA VER MAIS" : "DRAG TO SEE MORE"}
         </p>
       </ResizablePanelGroup>

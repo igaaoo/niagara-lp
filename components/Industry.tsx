@@ -92,7 +92,9 @@ export function Industry() {
   const niches = language === "pt-br" ? nichesPt : nichesEn;
 
   return (
-    <div className="flex flex-col w-full items-center md:py-10 justify-center bg-industry-bg md:bg-cover">
+    <div className="flex flex-col w-full items-center md:py-10 justify-center bg-industry-bg md:bg-cover"
+      id="industry"
+    >
       <div className=" p-8 md:p-4 md:mb-10 text-white">
         <p className="m:text-2xl text-lg font-medium px-8 w-full  text-center text-orange-600">
           {

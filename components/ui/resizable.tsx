@@ -1,6 +1,6 @@
 "use client";
 
-import { MoveHorizontal } from "lucide-react";
+import { ChevronsLeftRight, MoveHorizontal } from "lucide-react";
 import * as ResizablePrimitive from "react-resizable-panels";
 
 import { cn } from "@/lib/utils";
@@ -35,8 +35,8 @@ const ResizableHandle = ({
     {...props}
   >
     {withHandle && (
-      <div className="z-10 flex w-fit px-1 items-center justify-center border-2 bg-orange-600">
-        <MoveHorizontal className="size-5" />
+      <div className="z-10 flex w-fit px-1 items-center justify-center border-2 rounded-full text-white">
+        <ChevronsLeftRight className="size-6" />
       </div>
     )}
   </ResizablePrimitive.PanelResizeHandle>

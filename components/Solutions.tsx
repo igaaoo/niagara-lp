@@ -91,7 +91,10 @@ export function Solutions() {
 
 
   return (
-    <div className="flex flex-col w-full items-center md:py-10 justify-center  bg-gradient-to-t from-white to-slate-200">
+    <div
+      className="flex flex-col w-full items-center md:py-10 justify-center  bg-gradient-to-t from-white to-slate-200"
+      id="solutions"
+    >
       <div className="p-8 md:p-4 md:mb-10 text-black">
         <p className="m:text-2xl text-lg font-bold font-medium px-8 w-full  text-center text-orange-600">
           {info.title}
