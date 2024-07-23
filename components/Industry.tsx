@@ -95,7 +95,7 @@ export function Industry() {
     <div className="flex flex-col w-full items-center md:py-10 justify-center bg-industry-bg md:bg-cover"
       id="industry"
     >
-      <div className=" p-8 md:p-4 md:mb-10 text-white">
+      <div className=" p-8 md:p-4 md:mb-10 text-white text-center">
         <p className="text-lg font-medium px-8 w-full  text-center text-orange-600">
           {
             language === "pt-br" ?
@@ -103,7 +103,7 @@ export function Industry() {
               "INDUSTRY"
           }
         </p>
-        <span className="md:text-5xl font-bold text-2xl">
+        <span className="md:text-5xl font-bold text-xl">
           {
             language === "pt-br" ?
               "Servicing the following niches" :

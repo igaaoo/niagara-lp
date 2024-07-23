@@ -92,14 +92,14 @@ export function Solutions() {
 
   return (
     <div
-      className="flex flex-col w-full items-center md:py-10 justify-center  bg-gradient-to-t from-white to-slate-200"
+      className="flex flex-col w-full items-center md:py-10 py-4 justify-center bg-zinc-50 "
       id="solutions"
     >
-      <div className="p-8 md:p-4 md:mb-10 text-black">
-        <p className=" text-lg font-bold font-medium px-8 w-full  text-center text-orange-600">
+      <div className="p-8 md:p-4 md:mb-10 text-black text-center">
+        <p className=" text-lg  font-medium px-8 w-full  text-center text-orange-600">
           {info.title}
         </p>
-        <span className="md:text-5xl font-bold  text-2xl">
+        <span className="md:text-5xl font-bold  text-xl text-center">
           {info.description}
         </span>
       </div>

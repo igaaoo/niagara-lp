@@ -20,7 +20,7 @@ export function Lema() {
             "TRANSFORME SUAS IDEIAS EM REALIDADE" :
             "TURN YOUR IDEAS INTO REALITY"}
         </h2>
-        <p className="md:text-4xl text-2xl font-semibold leading-8">
+        <p className="md:text-4xl text-xl font-semibold leading-6">
           {language === "pt-br" ?
             "Estúdio especializado em desenvolver projetos 3D ultra realistas no Unreal" :
             "Studio specialized in developing ultra-realistic 3D projects in Unreal"}
