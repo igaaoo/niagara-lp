@@ -18,17 +18,18 @@ export function Clients() {
   const { language } = useLanguageContext();
 
   return (
-    <div className="flex flex-col w-full items-center pb-10 justify-center bg-zinc-50">
-      <div className="p-8 md:p-8 md:mb-6 text-black text-center">
+    <div className="flex flex-col w-full items-center pb-10 justify-center bg-zinc-50"
+      id="clients">
+      <div className="p-12 md:p-8 md:mb-6 text-black text-center">
         {/* <p className="m:text-2xl text-lg  font-medium px-8 w-full  text-center">
           WHO TRUST
         </p> */}
         {/* <p className=" text-lg  font-medium px-8 w-full  text-center text-orange-600">
           {language === "pt-br" ? "QUEM CONFIA EM NÓS" : "WHO TRUST US"}
         </p> */}
-        <span className="font-bold  text-xl md:text-2xl ">
-          {language === "pt-br" ? "Alguns de nossos clientes e parceiros" : "Some of our clients and partners"}
-        </span>
+        {/* <span className="font-bold  text-xl md:text-3xl ">
+          {language === "pt-br" ? "Clientes e parceiros" : "Clients and partners"}
+        </span> */}
       </div>
 
 

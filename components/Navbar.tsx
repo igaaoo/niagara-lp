@@ -201,6 +201,17 @@ export function Navbar() {
                 <button
                   className='hover:text-amber-400 text-base pr-5  font-medium font-red-hat focus:-text-amber-400'
                   onClick={() => {
+                    const element = document.getElementById('clients');
+                    element?.scrollIntoView({
+                      behavior: 'smooth',
+                    });
+                  }}
+                >CLIENTS
+                </button>
+
+                <button
+                  className='hover:text-amber-400 text-base pr-5  font-medium font-red-hat focus:-text-amber-400'
+                  onClick={() => {
                     const element = document.getElementById('cases');
                     element?.scrollIntoView({
                       behavior: 'smooth'
@@ -211,7 +222,14 @@ export function Navbar() {
                 {/* <button className='hover:text-amber-400 text-base font-medium font-red-hat focus:-text-amber-400'>PARCEIROS</button> */}
               </NavigationMenuList>
             </NavigationMenu>
-            <button className='bg-orange-600 hover:bg-orange-700 text-sm font-semibold font-red-hat px-4 py-0 grow ml-10 text-white'>
+
+            <button className='bg-orange-600 hover:bg-orange-700 text-sm font-semibold font-red-hat px-4 py-0 grow ml-10 text-white'
+              onClick={() => {
+                const element = document.getElementById('contact');
+                element?.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }}>
               {
                 language === 'pt-br' ?
                   'FALE CONOSCO'
