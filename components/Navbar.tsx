@@ -76,16 +76,13 @@ export function Navbar() {
 
   return (
     <nav className={`fixed  w-full z-50 transition-colors duration-300 ${(isScrolled || isMobile || pathname != "/") ? 'bg-black' : 'bg-transparent'}`}>
-      <div className='px-4 md:px-40 flex  md:flex-row items-center justify-between pt-2 w-full relative'>
+      <div className='px-4 md:px-64 flex  md:flex-row items-center justify-between pt-4 w-full relative'>
 
         <div className='flex justify-between w-full md:px-20 px-6'>
-          <Link
-            href='/'
-            passHref
-          >
-            <div className='flex items-center gap-2 py-2 items-center align-middle'>
-              <Image src="NS3.png" width={45} height={45} alt='Niagara Studios' className='invert' />
-              <h1 className={`text-2xl md:text-2xl  text-white whitespace-nowrap flex gap-1 tracking-wide`}>
+          <Link href='/' passHref>
+            <div className='flex items-center gap-2 py-2'>
+              <Image src="NS3.png" width={35} height={35} alt='Niagara Studios' className='invert' />
+              <h1 className='text-2xl md:text-2xl text-white  h-fit p-0 m-0 font-medium whitespace-nowrap flex items-center gap-1 tracking-wide'>
                 NIAGARA STUDIOS
               </h1>
             </div>
@@ -104,6 +101,7 @@ export function Navbar() {
             }
           </div>
         </div>
+
 
         {/* Large Navigation */}
         <div className='flex gap-2 py-2 items-center align-middle'>
