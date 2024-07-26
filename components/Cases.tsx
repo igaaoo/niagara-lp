@@ -1,20 +1,8 @@
 "use client";
 
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@/components/ui/resizable";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import Image from "next/image";
 import { Button } from "./ui/button";
 
-import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from "react";
 import { useLanguageContext } from "@/context/LanguageContext";
 
@@ -30,7 +18,7 @@ const infoEn = {
 
 const nichesPt = [
   {
-    title: "Estúdios Virtuais",
+    title: "Pacifil",
     description: "Dê vida ao seu conteúdo com estúdios virtuais impressionantes e imersivos",
     bgClass: "bg-carousel-virtual-studios"
   },
@@ -80,15 +68,10 @@ export function Cases() {
 
   const { language } = useLanguageContext();
 
-  const niches = language === "en-us" ? nichesEn : nichesPt;
+
   const info = language === "en-us" ? infoEn : infoPt;
 
-  useEffect(() => {
-    if (window != undefined && window.innerWidth < 800) {
-      setIsMobile(true);
-    }
-  }, []);
-
+  const [video, setVideo] = useState(0);
 
   return (
     <div
@@ -104,130 +87,52 @@ export function Cases() {
         </span>
       </div>
 
-      {
-        !isMobile ?
-          <ResizablePanelGroup
-            direction="horizontal"
-            className="max-w-[80%] min-h-[600px] h-full w-full bg-white shadow-lg"
+
+      <section className="flex flex-col gap-4">
+
+        <video autoPlay muted loop className='w-full object-top'>
+          {
+            video === 0 && (
+              <source src="/videos/pacifil.mp4" type="video/mp4" />
+            )
+          }
+          {
+            video === 1 && (
+              <source src="/videos/comil.mp4" type="video/mp4" />
+            )
+          }
+          {
+            video === 2 && (
+              <source src="/videos/page.mp4" type="video/mp4" />
+            )
+          }
+        </video>
+
+
+        <div className="grid grid-cols-3 gap-4">
+          <Button className="w-full h-20 bg-zinc-200 border-b-4 border-b-orange-600"
+            onClick={() => setVideo(0)}
           >
-            <ResizablePanel defaultSize={70}>
-              <ResizablePanelGroup direction="horizontal">
-                <Card className={`rounded-none ${niches[0].bgClass} bg-cover border-0 shadow bg-center h-full`}>
-                  <CardContent className="flex p-0 flex-col w-full h-full justify-end">
-                    <div className="w-full p-6 bg-black bg-opacity-70">
-                      <p className="md:text-xl text-white">{niches[0].title}</p>
-                      <p className="md:text-2xl text-xl font-semibold text-white">
-                        {niches[0].description}
-                      </p>
-                      <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
-                        {
-                          language === "pt-br" ?
-                            "SAIBA MAIS" :
-                            "DISCOVER MORE"
-                        }
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className={`rounded-none ${niches[3].bgClass} bg-cover bg-center border-0 shadow h-full`}>
-                  <CardContent className="flex p-0 flex-col w-full h-full justify-end">
-                    <div className="w-full p-6 bg-black bg-opacity-30">
-                      <p className="md:text-xl text-white">{niches[3].title}</p>
-                      <p className="md:text-2xl text-xl font-semibold text-white">
-                        {niches[3].description}
-                      </p>
-                      <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
-                        {
-                          language === "pt-br" ?
-                            "SAIBA MAIS" :
-                            "DISCOVER MORE"
-                        }
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </ResizablePanelGroup>
-            </ResizablePanel>
-            <ResizableHandle />
-            <ResizablePanel defaultSize={50}>
-              <ResizablePanelGroup direction="vertical">
-                <ResizablePanel defaultSize={50}>
-                  <Card className={`rounded-none ${niches[1].bgClass} bg-center bg-cover border-0 shadow h-full`}>
-                    <CardContent className="flex p-0 flex-col w-full h-full justify-end">
-                      <div className="w-full p-4 bg-black bg-opacity-30">
-                        <p className="md:text-xl text-white">{niches[1].title}</p>
-                        <p className="md:text-2xl text-xl font-semibold text-white">
-                          {niches[1].description}
-                        </p>
-                        <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold">
-                          {
-                            language === "pt-br" ?
-                              "SAIBA MAIS" :
-                              "DISCOVER MORE"
-                          }
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </ResizablePanel>
-                <ResizableHandle />
-                <ResizablePanel defaultSize={50}>
-                  <Card className={`rounded-none ${niches[2].bgClass} bg-cover bg-center border-0 shadow h-full`}>
-                    <CardContent className="flex p-0 flex-col w-full h-full justify-end">
-                      <div className="w-full p-4 bg-black bg-opacity-50">
-                        <p className="md:text-xl text-white">{niches[2].title}</p>
-                        <p className="md:text-2xl text-xl font-semibold text-white">
-                          {niches[2].description}
-                        </p>
-                        <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
-                          {
-                            language === "pt-br" ?
-                              "SAIBA MAIS" :
-                              "DISCOVER MORE"
-                          }
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </ResizablePanel>
-              </ResizablePanelGroup>
-            </ResizablePanel>
-          </ResizablePanelGroup>
-          :
-          <Carousel
-            className="w-full"
-            opts={{
-              align: "center",
-              loop: true,
-            }}
+            <Image src="clients/pacifil.png" alt="Pacifil" width={140} height={100} />
+          </Button>
+
+          <Button className="w-full h-20 bg-primary border-b-4 border-b-orange-600"
+            onClick={() => setVideo(1)}
           >
-            <CarouselContent>
-              {niches.map((niche, index) => (
-                <CarouselItem className="md:basis-1/2" key={index}>
-                  <div className="p-1">
-                    <Card className={`rounded-none ${niche.bgClass} bg-center bg-cover border-0 shadow`}>
-                      <CardContent className="flex aspect-square md:aspect-video flex-col w-full justify-end items-start p-6 bg-black bg-opacity-50">
-                        <span className="md:text-xl text-white">{niche.title}</span>
-                        <span className="md:text-2xl text-xl font-semibold leading-6 text-white">
-                          {niche.description}
-                        </span>
-                        <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
-                          {
-                            language === "pt-br" ?
-                              "SAIBA MAIS" :
-                              "DISCOVER MORE"
-                          }
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-      }
+            <Image src="clients/comil.png" alt="Comil" width={140} height={100} />
+          </Button>
+
+          <Button className="w-full h-20 bg-blue-500 border-b-4 border-b-orange-600"
+            onClick={() => setVideo(2)}
+          >
+            <Image src="clients/page.png" alt="Pagé" width={140} height={100} />
+          </Button>
+        </div>
+
+      </section>
+
+
+
 
     </div>
   );

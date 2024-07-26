@@ -1,4 +1,6 @@
 "use client";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
 import { useLanguageContext } from "@/context/LanguageContext";
 import Image from "next/image";
 
@@ -84,9 +86,9 @@ export default function Home() {
                   {info.title}
                 </h3>
                 {
-                  info.sections.map(section => (
+                  info.sections.map((section, index) => (
                     <div key={section.title} className="flex flex-col py-4 md:py-10">
-                      <h4 className="md:text-3xl text-lg font-semibold ">
+                      <h4 className={`${index == 0 ? "md:text-3xl" : "md:text-lg"} text-lg font-semibold `}>
                         {section.title}
                       </h4>
                       <p className="md:text-xl">
@@ -102,9 +104,9 @@ export default function Home() {
                   {info.title}
                 </h3>
                 {
-                  info.sections.map(section => (
+                  info.sections.map((section, index) => (
                     <div key={section.title} className="flex flex-col py-4 md:py-10">
-                      <h4 className="md:text-3xl text-lg font-semibold ">
+                      <h4 className={`${index == 0 ? "md:text-3xl" : "md:text-lg"} text-lg font-semibold `}>
                         {section.title}
                       </h4>
                       <p className="md:text-xl">
@@ -117,8 +119,9 @@ export default function Home() {
             ))
           }
         </div>
-
       </section>
+
+      <Contact />
     </main>
   );
 }

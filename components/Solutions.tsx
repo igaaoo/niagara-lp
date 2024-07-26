@@ -92,7 +92,7 @@ export function Solutions() {
 
   return (
     <div
-      className="flex flex-col w-full items-center md:py-10 py-4 justify-center bg-zinc-50 "
+      className="flex flex-col w-full items-center md:py-10 py-4 justify-center  bg-zinc-50 "
       id="solutions"
     >
       <div className="p-8 md:p-4 md:mb-10 text-black text-center">
@@ -108,7 +108,7 @@ export function Solutions() {
         !isMobile ?
           <ResizablePanelGroup
             direction="horizontal"
-            className="max-w-[80%] min-h-[600px] h-full w-full bg-white shadow-lg"
+            className="max-w-[80%] min-h-[600px] h-full w-full bg-white shadow-lg border-2"
           >
             <ResizablePanel defaultSize={70}>
               <ResizablePanelGroup direction="horizontal">

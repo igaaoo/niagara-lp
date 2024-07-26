@@ -131,7 +131,7 @@ export function Contact() {
               </a>
             </div>
 
-            <span className=" text-xl font-semibold">
+            <span className=" text-xl font-semibold text-center">
               {
                 language === "pt-br" ?
                   "Nos siga nas redes sociais" :

@@ -29,7 +29,6 @@ const industryItens = [
   { pt: 'Saúde', en: 'Healthcare', href: '/industry/health' },
   { pt: 'Educação', en: 'Education', href: '/industry/education' },
   { pt: 'Treinamento', en: 'Training', href: '/industry/training' },
-  { pt: 'Corporativo', en: 'Corporate', href: '/industry/corporate' },
   { pt: 'Indústria', en: 'Industry', href: '/industry/industry' },
   { pt: 'Varejo', en: 'Retail', href: '/industry/retail' },
   { pt: 'Segurança do Trabalho', en: 'Work Safety', href: '/industry/work-safety' },
