@@ -65,7 +65,7 @@ export default function Home() {
   const { language } = useLanguageContext();
 
   return (
-    <main className="flex flex-col w-full py-10">
+    <main className="flex flex-col w-full pt-10">
       <div className="w-full relative">
         <Image src="/subpages/health.jpg" alt="Healthcare" width={1920} height={1080} className="w-full md:h-96 h-64 object-cover object-top" />
         <h2

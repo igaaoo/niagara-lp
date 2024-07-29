@@ -2,18 +2,17 @@
 
 import Image from "next/image";
 import { Button } from "./ui/button";
-
 import { useEffect, useState } from "react";
 import { useLanguageContext } from "@/context/LanguageContext";
 
 const infoPt = {
   title: "CASES",
-  description: "Cases de sucesso",
+  description: "Cases de Sucesso",
 };
 
 const infoEn = {
   title: "CASES",
-  description: "Success cases",
+  description: "Success Cases",
 };
 
 const nichesPt = [
@@ -62,16 +61,18 @@ const nichesEn = [
   }
 ];
 
-
 export function Cases() {
   const [isMobile, setIsMobile] = useState(false);
-
   const { language } = useLanguageContext();
 
-
   const info = language === "en-us" ? infoEn : infoPt;
-
   const [video, setVideo] = useState(0);
+
+  const videoSources = [
+    "/videos/pacifil.mp4",
+    "/videos/comil.mp4",
+    "/videos/page.mp4"
+  ];
 
   return (
     <div
@@ -79,61 +80,39 @@ export function Cases() {
       id="cases"
     >
       <div className="p-8 md:p-4 md:mb-10 text-black">
-        <p className=" text-lg font-bold font-medium px-8 w-full  text-center text-orange-600">
+        <p className="text-lg font-bold font-medium px-8 w-full text-center text-orange-600">
           {info.title}
         </p>
-        <span className="md:text-5xl font-bold  text-2xl">
+        <span className="md:text-5xl font-bold text-2xl">
           {info.description}
         </span>
       </div>
 
-
       <section className="flex flex-col gap-4">
-
-        <video autoPlay muted loop className='w-full object-top'>
-          {
-            video === 0 && (
-              <source src="/videos/pacifil.mp4" type="video/mp4" />
-            )
-          }
-          {
-            video === 1 && (
-              <source src="/videos/comil.mp4" type="video/mp4" />
-            )
-          }
-          {
-            video === 2 && (
-              <source src="/videos/page.mp4" type="video/mp4" />
-            )
-          }
+        <video autoPlay muted loop key={video} className='w-full object-top'>
+          <source src={videoSources[video]} type="video/mp4" />
         </video>
 
-
         <div className="grid grid-cols-3 gap-4">
-          <Button className="w-full h-20 bg-zinc-200 border-b-4 border-b-orange-600"
+          <Button className="w-full h-20 bg-zinc-200 border-b-4 border-b-orange-600 rounded-none"
             onClick={() => setVideo(0)}
           >
-            <Image src="clients/pacifil.png" alt="Pacifil" width={140} height={100} />
+            <Image src="/clients/pacifil.png" alt="Pacifil" width={140} height={100} />
           </Button>
 
-          <Button className="w-full h-20 bg-primary border-b-4 border-b-orange-600"
+          <Button className="w-full h-20 bg-zinc-200 border-b-4 border-b-orange-600 rounded-none"
             onClick={() => setVideo(1)}
           >
-            <Image src="clients/comil.png" alt="Comil" width={140} height={100} />
+            <Image src="/clients/comil.png" alt="Comil" width={140} height={100} className="invert" />
           </Button>
 
-          <Button className="w-full h-20 bg-blue-500 border-b-4 border-b-orange-600"
+          <Button className="w-full h-20 bg-zinc-200 border-b-4 border-b-orange-600 rounded-none"
             onClick={() => setVideo(2)}
           >
-            <Image src="clients/page.png" alt="Pagé" width={140} height={100} />
+            <Image src="/clients/page.png" alt="Pagé" width={140} height={100} />
           </Button>
         </div>
-
       </section>
-
-
-
-
     </div>
   );
 }

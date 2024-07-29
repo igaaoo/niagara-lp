@@ -41,6 +41,9 @@ const config = {
         "carousel-retail": "url('/carousel/retail.png')",
         "carousel-safety": "url('/carousel/safety.jpeg')",
         "carousel-events": "url('/carousel/events.jpg')",
+        "carousel-virtual-ads": "url('/carousel/virtualad.jpg')",
+        "carousel-virtual-sponsors": "url('/carousel/virtualSponsors.jpg')",
+
 
         "solutions-vr": "url('/solutions/vr.jpg')",
         "solutions-ar": "url('/solutions/ar.jpg')",

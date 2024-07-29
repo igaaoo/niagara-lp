@@ -6,6 +6,7 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import { useLanguageContext } from "@/context/LanguageContext";
+import { Button } from "./ui/button";
 
 
 export function VirtualADs() {
@@ -29,6 +30,18 @@ export function VirtualADs() {
             "Empresa pioneira em publicidade imersiva e interativa em realidade virtual" :
             "Pioneering company in immersive and interactive advertising in virtual reality"}
         </p>
+
+        <Button variant="outline" className="bg-transparent w-fit px-10  md:text-xl rounded-none text-white font-semibold bg-orange-600"
+          onClick={
+            () => window.location.href = '/industry/virtual-ads'
+          }
+        >
+          {
+            language === "pt-br" ?
+              "SAIBA MAIS" :
+              "DISCOVER MORE"
+          }
+        </Button>
       </div>
 
 

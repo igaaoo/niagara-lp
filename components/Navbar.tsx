@@ -33,6 +33,8 @@ const industryItens = [
   { pt: 'Varejo', en: 'Retail', href: '/industry/retail' },
   { pt: 'Segurança do Trabalho', en: 'Work Safety', href: '/industry/work-safety' },
   { pt: 'Eventos', en: 'Events', href: '/industry/events' },
+  { pt: 'Anúncios Virtuais | Imersivos e Interativos', en: 'Virtual Ads | Immersive and Interactive', href: '/industry/virtual-ads' },
+  { en: 'Virtual Sponsors | Events', pt: 'Patrocínios Virtuais | Eventos', href: '/industry/virtual-sponsors' },
 ];
 
 const solutionsItens = [
@@ -40,6 +42,7 @@ const solutionsItens = [
   { pt: 'Realidade Aumentada', en: 'Augmented Reality', href: '/solutions/ar' },
   { pt: 'Renderizações', en: 'Renders', href: '/solutions/renders' },
   { pt: 'Estúdios Virtuais', en: 'Virtual Studios', href: '/solutions/virtual-studios' },
+  { pt: 'Soluções com Inteligência Artificial', en: 'Artificial Intelligence Solutions', href: '/solutions/ai-solutions' },
 ];
 
 
@@ -81,7 +84,7 @@ export function Navbar() {
         <div className='flex justify-between w-full md:px-20 px-6'>
           <Link href='/' passHref>
             <div className='flex items-center gap-2 py-2'>
-              <Image src="NS3.png" width={35} height={35} alt='Niagara Studios' className='invert' />
+              <Image src="icon.png" width={35} height={35} alt='Niagara Studios' className='invert' />
               <h1 className='text-2xl md:text-2xl text-white  h-fit p-0 m-0 font-medium whitespace-nowrap flex items-center gap-1 tracking-wide'>
                 NIAGARA STUDIOS
               </h1>

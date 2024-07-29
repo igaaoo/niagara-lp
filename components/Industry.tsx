@@ -14,37 +14,56 @@ const nichesPt = [
   {
     title: "Saúde",
     description: "Transforme a saúde com simulações realistas e ambientes interativos",
-    bgClass: "bg-carousel-health"
+    bgClass: "bg-carousel-health",
+    href: '/industry/health'
   },
   {
     title: "Educação",
     description: "Revolucione a educação com experiências de aprendizado envolventes",
-    bgClass: "bg-carousel-education"
+    bgClass: "bg-carousel-education",
+    href: '/industry/education'
   },
   {
     title: "Treinamento",
     description: "Aprimore habilidades com treinamentos em ambientes ultra-realistas",
-    bgClass: "bg-carousel-training"
+    bgClass: "bg-carousel-training",
+    href: '/industry/training'
   },
   {
     title: "Indústria",
     description: "Maximize a eficiência industrial com modelagens e simulações precisas",
-    bgClass: "bg-carousel-industry"
+    bgClass: "bg-carousel-industry",
+    href: '/industry/industry'
   },
   {
     title: "Varejo",
     description: "Encante seus clientes com visualizações de produtos deslumbrantes",
-    bgClass: "bg-carousel-retail"
+    bgClass: "bg-carousel-retail",
+    href: '/industry/retail'
   },
   {
     title: "Segurança do Trabalho",
     description: "Garanta a segurança com treinamentos imersivos e realistas",
-    bgClass: "bg-carousel-safety"
+    bgClass: "bg-carousel-safety",
+    href: '/industry/work-safety'
   },
   {
     title: "Eventos",
     description: "Eleve seus eventos com cenários espetaculares e interativos",
-    bgClass: "bg-carousel-events"
+    bgClass: "bg-carousel-events",
+    href: '/industry/events'
+  },
+  {
+    title: "Anúncios Virtuais | Imersivos e Interativos",
+    description: "Inove sua publicidade com anúncios imersivos e interativos em realidade virtual",
+    bgClass: "bg-carousel-events",
+    href: '/industry/virtual-ads'
+  },
+  {
+    title: 'Patrocínios Virtuais | Eventos',
+    description: 'Aumente a visibilidade de sua marca com patrocínios virtuais em eventos',
+    bgClass: "bg-carousel-events",
+    href: '/industry/virtual-sponsors'
   }
 ];
 
@@ -52,37 +71,56 @@ const nichesEn = [
   {
     title: "Health",
     description: "Transform health with realistic simulations and interactive environments",
-    bgClass: "bg-carousel-health"
+    bgClass: "bg-carousel-health",
+    href: '/industry/health'
   },
   {
     title: "Education",
     description: "Revolutionize education with engaging learning experiences",
-    bgClass: "bg-carousel-education"
+    bgClass: "bg-carousel-education",
+    href: '/industry/education'
   },
   {
     title: "Training",
     description: "Enhance skills with ultra-realistic training environments",
-    bgClass: "bg-carousel-training"
+    bgClass: "bg-carousel-training",
+    href: '/industry/training'
   },
   {
     title: "Industry",
     description: "Maximize industrial efficiency with precise modeling and simulations",
-    bgClass: "bg-carousel-industry"
+    bgClass: "bg-carousel-industry",
+    href: '/industry/industry'
   },
   {
     title: "Retail",
     description: "Delight your customers with stunning product visualizations",
-    bgClass: "bg-carousel-retail"
+    bgClass: "bg-carousel-retail",
+    href: '/industry/retail'
   },
   {
     title: "Work Safety",
     description: "Ensure safety with immersive and realistic training",
-    bgClass: "bg-carousel-safety"
+    bgClass: "bg-carousel-safety",
+    href: '/industry/work-safety'
   },
   {
     title: "Events",
     description: "Elevate your events with spectacular and interactive scenarios",
-    bgClass: "bg-carousel-events"
+    bgClass: "bg-carousel-events",
+    href: '/industry/events'
+  },
+  {
+    title: "Virtual Ads | Immersive and Interactive",
+    description: "Innovate your advertising with immersive and interactive ads in virtual reality",
+    bgClass: "bg-carousel-virtual-ads",
+    href: '/industry/virtual-ads'
+  },
+  {
+    title: 'Virtual Sponsors | Events',
+    description: 'Increase brand visibility with virtual sponsorships at events',
+    bgClass: "bg-carousel-virtual-sponsors",
+    href: '/industry/virtual-sponsors'
   }
 ];
 
@@ -129,8 +167,18 @@ export function Industry() {
                     <span className="md:text-2xl text-xl font-semibold leading-6 text-white">
                       {niche.description}
                     </span>
-                    <Button variant="outline" className="bg-transparent px-10 border-2 md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
-                      DISCOVER MORE
+                    <Button
+                      variant="outline"
+                      className="bg-transparent px-10 border-2 md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30"
+                      onClick={
+                        () => window.location.href = niche.href
+                      }
+                    >
+                      {
+                        language === "pt-br" ?
+                          "SAIBA MAIS" :
+                          "DISCOVER MORE"
+                      }
                     </Button>
                   </CardContent>
                 </Card>
