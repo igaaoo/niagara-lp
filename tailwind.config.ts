@@ -41,7 +41,7 @@ const config = {
         "carousel-retail": "url('/carousel/retail.png')",
         "carousel-safety": "url('/carousel/safety.jpeg')",
         "carousel-events": "url('/carousel/events.jpg')",
-        "carousel-virtual-ads": "url('/carousel/virtualad.jpg')",
+        "carousel-virtual-ads": "url('/carousel/virtualad.png')",
         "carousel-virtual-sponsors": "url('/carousel/virtualSponsors.jpg')",
 
 

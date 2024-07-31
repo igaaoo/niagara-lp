@@ -1,6 +1,5 @@
 "use client";
 import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
 import { useLanguageContext } from "@/context/LanguageContext";
 import Image from "next/image";
 
@@ -10,34 +9,58 @@ const infosPt = [
     title: "Estúdios Virtuais",
     sections: [
       {
-        title: "A Evolução dos Estúdios Virtuais",
-        description: "Desde a sua introdução nos anos 1980, os Estúdios Virtuais (VS) passaram por uma grande transformação. Naquela época, a baixa qualidade gráfica restringia seu uso a algumas produções específicas. A virada aconteceu em 2016, quando motores de renderização de jogos transformaram a indústria, permitindo que estúdios de diferentes tamanhos criassem ambientes imersivos usando apenas uma tela verde.",
+        title: "Transformando Produções com Estúdios Virtuais",
+        description: "Os estúdios virtuais estão revolucionando a produção de mídia ao permitir a criação de ambientes imersivos e dinâmicos com o uso de tecnologias avançadas. A Niagara Studios oferece soluções de estúdios virtuais que combinam gráficos de alta qualidade com uma integração perfeita para proporcionar experiências visuais excepcionais.",
       },
       {
-        title: "Avanços com Unreal Engine",
-        description: "O uso do Unreal Engine nas transmissões trouxe um salto significativo na qualidade gráfica. Com um pipeline de composição em tempo real e capacidades de chaveamento excepcionais, tornou-se possível criar soluções de VS sem precedentes.",
+        title: "Produção Flexível",
+        description: "Com os estúdios virtuais, as produções podem ser facilmente ajustadas e personalizadas para atender às necessidades específicas de cada projeto. Isso permite uma maior flexibilidade e criatividade, facilitando a criação de conteúdos visuais atraentes e inovadores.",
       },
-
+      {
+        title: "Eficiência de Custo",
+        description: "A utilização de estúdios virtuais pode reduzir significativamente os custos de produção ao eliminar a necessidade de locações físicas e cenários complexos. Isso torna a produção mais acessível, permitindo que empresas de todos os tamanhos possam criar conteúdos de alta qualidade.",
+      },
+      {
+        title: "Integração em Tempo Real",
+        description: "As soluções de estúdios virtuais da Niagara Studios permitem a integração em tempo real de elementos virtuais e físicos. Isso proporciona uma experiência de produção contínua e eficiente, melhorando a qualidade e a consistência dos conteúdos produzidos.",
+      },
+      {
+        title: "Aplicações Diversificadas",
+        description: "Os estúdios virtuais podem ser utilizados em uma ampla gama de aplicações, desde transmissões ao vivo e programas de TV até eventos corporativos e treinamentos. Isso amplia as possibilidades de uso e maximiza o retorno sobre o investimento.",
+      }
     ]
   }
 ];
+
 
 const infosEn = [
   {
     title: "Virtual Studios",
     sections: [
       {
-        title: "The Advancement of Virtual Studios",
-        description: "Since their inception in the 1980s, Virtual Studios (VS) have undergone remarkable evolution. Initially limited by low-quality graphics, their application was restricted to specific productions. The breakthrough came in 2016, when game rendering engines revolutionized the field, enabling studios of all sizes to create immersive environments with just a green screen.",
+        title: "Transforming Productions with Virtual Studios",
+        description: "Virtual studios are revolutionizing media production by enabling the creation of immersive and dynamic environments using advanced technologies. Niagara Studios offers virtual studio solutions that combine high-quality graphics with seamless integration to deliver exceptional visual experiences.",
       },
       {
-        title: "Progress with Unreal Engine",
-        description: "The adoption of Unreal Engine for broadcasting significantly enhanced graphical quality. Combining real-time compositing pipelines with exceptional keying capabilities, it paved the way for unparalleled VS solutions.",
+        title: "Flexible Production",
+        description: "With virtual studios, productions can be easily adjusted and customized to meet the specific needs of each project. This allows for greater flexibility and creativity, facilitating the creation of engaging and innovative visual content.",
       },
-
+      {
+        title: "Cost Efficiency",
+        description: "Utilizing virtual studios can significantly reduce production costs by eliminating the need for physical locations and complex sets. This makes production more accessible, enabling companies of all sizes to create high-quality content.",
+      },
+      {
+        title: "Real-Time Integration",
+        description: "Niagara Studios' virtual studio solutions allow for real-time integration of virtual and physical elements. This provides a seamless and efficient production experience, enhancing the quality and consistency of the produced content.",
+      },
+      {
+        title: "Diverse Applications",
+        description: "Virtual studios can be used in a wide range of applications, from live broadcasts and TV shows to corporate events and training sessions. This broadens the scope of use and maximizes return on investment.",
+      }
     ]
   }
 ];
+
 
 
 

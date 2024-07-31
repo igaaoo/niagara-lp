@@ -70,7 +70,7 @@ export default function Home() {
   return (
     <main className="flex flex-col w-full pt-10">
       <div className="w-full relative">
-        <Image src="/carousel/virtualad.jpg" alt="Healthcare" width={1920} height={1080} className="w-full md:h-96 h-64 object-cover object-center" />
+        <Image src="/carousel/virtualad.png" alt="Healthcare" width={1920} height={1080} className="w-full md:h-96 h-64 object-cover object-center" />
         <h2
           className="md:text-8xl text-6xl bg-black bg-opacity-40 absolute top-0 bottom-0 right-0 left-0 flex items-center justify-center font-semibold text-white"
         >

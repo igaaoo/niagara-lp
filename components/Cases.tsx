@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLanguageContext } from "@/context/LanguageContext";
 
 const infoPt = {
@@ -15,54 +15,10 @@ const infoEn = {
   description: "Success Cases",
 };
 
-const nichesPt = [
-  {
-    title: "Pacifil",
-    description: "Dê vida ao seu conteúdo com estúdios virtuais impressionantes e imersivos",
-    bgClass: "bg-carousel-virtual-studios"
-  },
-  {
-    title: "Realidade Virtual",
-    description: "Aprimore habilidades em ambientes ultra-realistas",
-    bgClass: "bg-solutions-vr"
-  },
-  {
-    title: "Realidade Aumentada",
-    description: "Maximize experiências com interações em tempo real",
-    bgClass: "bg-solutions-ar"
-  },
-  {
-    title: "Renders",
-    description: "Encante com visualizações deslumbrantes de produtos",
-    bgClass: "bg-solutions-render"
-  },
-];
 
-const nichesEn = [
-  {
-    title: "Virtual Studios",
-    description: "Bring your content to life with stunning and immersive virtual studios",
-    bgClass: "bg-carousel-virtual-studios"
-  },
-  {
-    title: "Virtual Reality",
-    description: "Enhance skills in ultra-realistic environments",
-    bgClass: "bg-solutions-vr"
-  },
-  {
-    title: "Augmented Reality",
-    description: "Maximize experiences with real-time interactions",
-    bgClass: "bg-solutions-ar"
-  },
-  {
-    title: "Renders",
-    description: "Delight with stunning product visualizations",
-    bgClass: "bg-solutions-render"
-  }
-];
+
 
 export function Cases() {
-  const [isMobile, setIsMobile] = useState(false);
   const { language } = useLanguageContext();
 
   const info = language === "en-us" ? infoEn : infoPt;
@@ -71,7 +27,8 @@ export function Cases() {
   const videoSources = [
     "/videos/pacifil.mp4",
     "/videos/comil.mp4",
-    "/videos/page.mp4"
+    "/videos/page.mp4",
+    "/videos/oilgas.mp4"
   ];
 
   return (
@@ -80,7 +37,7 @@ export function Cases() {
       id="cases"
     >
       <div className="p-8 md:p-4 md:mb-10 text-black">
-        <p className="text-lg font-bold font-medium px-8 w-full text-center text-orange-600">
+        <p className="text-lg  font-medium px-8 w-full text-center text-orange-600">
           {info.title}
         </p>
         <span className="md:text-5xl font-bold text-2xl">
@@ -88,12 +45,12 @@ export function Cases() {
         </span>
       </div>
 
-      <section className="flex flex-col gap-4">
+      <section className="flex flex-col gap-4 max-w-5xl">
         <video autoPlay muted loop key={video} className='w-full object-top'>
           <source src={videoSources[video]} type="video/mp4" />
         </video>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Button className="w-full h-20 bg-zinc-200 border-b-4 border-b-orange-600 rounded-none"
             onClick={() => setVideo(0)}
           >
@@ -110,6 +67,12 @@ export function Cases() {
             onClick={() => setVideo(2)}
           >
             <Image src="/clients/page.png" alt="Pagé" width={140} height={100} />
+          </Button>
+
+          <Button className="w-full h-20 text-black text-2xl font-bold bg-zinc-200 border-b-4 border-b-orange-600 rounded-none"
+            onClick={() => setVideo(3)}
+          >
+            <p>Oil & Gas</p>
           </Button>
         </div>
       </section>
