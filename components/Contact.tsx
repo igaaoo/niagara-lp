@@ -82,8 +82,8 @@ export function Contact() {
                   "Feel free to contact us for a quote"
               }
             </span>
-            <a href="mailto:comercial@niagarastudios.com.br" target="_blank" className="underline hover:text-orange-600">
-              comercial@niagarastudios.com.br
+            <a href="mailto:comercial@niagarastudios.com" target="_blank" className="underline hover:text-orange-600">
+              comercial@niagarastudios.com
             </a>
           </CardContent>
         </Card>
