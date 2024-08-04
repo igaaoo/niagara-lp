@@ -20,7 +20,9 @@ export function Main() {
       {
         !isMobile ?
           <video autoPlay muted loop className='w-full object-top'>
-            <source src='/videoMain.mov' type='video/mp4' />
+            {/* <source src='/videoMain.mov' type='video/mp4' /> */}
+            <source src='/videos/main.mp4' type='video/mp4' />
+
           </video>
           :
           <div className="text-white relative">
