@@ -17,6 +17,8 @@ import { Button } from "./ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from "react";
 import { useLanguageContext } from "@/context/LanguageContext";
+import Link from "next/link";
+import Autoplay from "embla-carousel-autoplay";
 
 const infoPt = {
   title: "SOLUÇÕES",
@@ -32,22 +34,26 @@ const nichesPt = [
   {
     title: "Estúdios Virtuais",
     description: "Dê vida ao seu conteúdo com estúdios virtuais impressionantes e imersivos",
-    bgClass: "bg-carousel-virtual-studios"
+    bgClass: "bg-carousel-virtual-studios",
+    href: '/solutions/virtual-studios'
   },
   {
     title: "Realidade Virtual",
     description: "Aprimore habilidades em ambientes ultra-realistas",
-    bgClass: "bg-solutions-vr"
+    bgClass: "bg-solutions-vr",
+    href: '/solutions/vr'
   },
   {
     title: "Realidade Aumentada",
     description: "Maximize experiências com interações em tempo real",
-    bgClass: "bg-solutions-ar"
+    bgClass: "bg-solutions-ar",
+    href: '/solutions/ar'
   },
   {
     title: "Renders",
     description: "Encante com visualizações deslumbrantes de produtos",
-    bgClass: "bg-solutions-render"
+    bgClass: "bg-solutions-render",
+    href: '/solutions/renders'
   },
 ];
 
@@ -55,22 +61,27 @@ const nichesEn = [
   {
     title: "Virtual Studios",
     description: "Bring your content to life with stunning and immersive virtual studios",
-    bgClass: "bg-carousel-virtual-studios"
+    bgClass: "bg-carousel-virtual-studios",
+    href: '/solutions/virtual-studios'
   },
   {
     title: "Virtual Reality",
     description: "Enhance skills in ultra-realistic environments",
-    bgClass: "bg-solutions-vr"
+    bgClass: "bg-solutions-vr",
+    href: '/solutions/vr'
+
   },
   {
     title: "Augmented Reality",
     description: "Maximize experiences with real-time interactions",
-    bgClass: "bg-solutions-ar"
+    bgClass: "bg-solutions-ar",
+    href: '/solutions/ar'
   },
   {
     title: "Renders",
     description: "Delight with stunning product visualizations",
-    bgClass: "bg-solutions-render"
+    bgClass: "bg-solutions-render",
+    href: '/solutions/renders'
   }
 ];
 
@@ -116,16 +127,18 @@ export function Solutions() {
                   <CardContent className="flex p-0 flex-col w-full h-full justify-end">
                     <div className="w-full p-6 bg-black bg-opacity-70">
                       <p className="md:text-xl text-white">{niches[0].title}</p>
-                      <p className="md:text-2xl text-xl font-semibold text-white">
+                      <p className="md:text-2xl text-xl font-semibold text-white mb-4">
                         {niches[0].description}
                       </p>
-                      <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
+                      <Link
+                        href={niches[0].href}
+                        className="bg-transparent px-10 border-2 p-1.5  hover:bg-white hover:bg-opacity-20 md:text-xl rounded-none text-white font-semibold bg-black bg-opacity-30">
                         {
                           language === "pt-br" ?
                             "SAIBA MAIS" :
                             "DISCOVER MORE"
                         }
-                      </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
@@ -133,16 +146,18 @@ export function Solutions() {
                   <CardContent className="flex p-0 flex-col w-full h-full justify-end">
                     <div className="w-full p-6 bg-black bg-opacity-30">
                       <p className="md:text-xl text-white">{niches[3].title}</p>
-                      <p className="md:text-2xl text-xl font-semibold text-white">
+                      <p className="md:text-2xl text-xl font-semibold text-white mb-4">
                         {niches[3].description}
                       </p>
-                      <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
+                      <Link
+                        href={niches[3].href}
+                        className="bg-transparent px-10 border-2 p-1.5  md:text-xl rounded-none mt-6 hover:bg-white hover:bg-opacity-20 text-white font-semibold bg-black bg-opacity-30">
                         {
                           language === "pt-br" ?
                             "SAIBA MAIS" :
                             "DISCOVER MORE"
                         }
-                      </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
@@ -156,16 +171,20 @@ export function Solutions() {
                     <CardContent className="flex p-0 flex-col w-full h-full justify-end">
                       <div className="w-full p-4 bg-black bg-opacity-30">
                         <p className="md:text-xl text-white">{niches[1].title}</p>
-                        <p className="md:text-2xl text-xl font-semibold text-white">
+                        <p className="md:text-2xl text-xl font-semibold mb-4 text-white">
                           {niches[1].description}
                         </p>
-                        <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold">
+
+                        <Link
+                          href={niches[1].href}
+                          className="bg-transparent px-10 border-2 p-1.5  md:text-xl rounded-none hover:bg-white hover:bg-opacity-20 text-white font-semibold bg-black bg-opacity-30">
                           {
                             language === "pt-br" ?
                               "SAIBA MAIS" :
                               "DISCOVER MORE"
                           }
-                        </Button>
+                        </Link>
+
                       </div>
                     </CardContent>
                   </Card>
@@ -176,16 +195,18 @@ export function Solutions() {
                     <CardContent className="flex p-0 flex-col w-full h-full justify-end">
                       <div className="w-full p-4 bg-black bg-opacity-50">
                         <p className="md:text-xl text-white">{niches[2].title}</p>
-                        <p className="md:text-2xl text-xl font-semibold text-white">
+                        <p className="md:text-2xl text-xl font-semibold mb-4 text-white">
                           {niches[2].description}
                         </p>
-                        <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
+                        <Link
+                          href={niches[2].href}
+                          className="bg-transparent px-10 p-1.5 border-2  md:text-xl hover:bg-white hover:bg-opacity-20 rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
                           {
                             language === "pt-br" ?
                               "SAIBA MAIS" :
                               "DISCOVER MORE"
                           }
-                        </Button>
+                        </Link>
                       </div>
                     </CardContent>
                   </Card>
@@ -200,6 +221,17 @@ export function Solutions() {
               align: "center",
               loop: true,
             }}
+
+            plugins={[
+              Autoplay({
+                delay: 3000,
+                playOnInit: true,
+                stopOnFocusIn: false,
+                stopOnInteraction: false,
+                stopOnLastSnap: false,
+                stopOnMouseEnter: true,
+              }),
+            ]}
           >
             <CarouselContent>
               {niches.map((niche, index) => (
@@ -211,13 +243,15 @@ export function Solutions() {
                         <span className="md:text-2xl text-xl font-semibold leading-6 text-white">
                           {niche.description}
                         </span>
-                        <Button variant="outline" className="bg-transparent px-10 border-2  md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
+                        <Link
+                          href={niche.href}
+                          className="bg-transparent px-10 border-2 p-2 hover:bg-white hover:bg-opacity-20  md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30">
                           {
                             language === "pt-br" ?
                               "SAIBA MAIS" :
                               "DISCOVER MORE"
                           }
-                        </Button>
+                        </Link>
                       </CardContent>
                     </Card>
                   </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Josefin_Sans, Space_Grotesk, Rubik } from 'next/font/google';
+import { Inter, Josefin_Sans, Rubik } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import LanguageContextProvider from '@/context/LanguageContextProvider';
@@ -17,11 +17,6 @@ const josefin = Josefin_Sans({
   variable: '--font-josefin',
 });
 
-const space_grotesk = Space_Grotesk({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-space-grotesk',
-});
 
 
 const rubik = Rubik({

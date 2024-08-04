@@ -51,25 +51,25 @@ export function Cases() {
         </video>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Button className="w-full h-20 bg-zinc-200 border-b-4 border-b-orange-600 rounded-none"
+          <Button className="w-full h-20 bg-zinc-200 border-b-4 border-b-orange-600 rounded-none focus:bg-slate-600"
             onClick={() => setVideo(0)}
           >
             <Image src="/clients/pacifil.png" alt="Pacifil" width={140} height={100} />
           </Button>
 
-          <Button className="w-full h-20 bg-zinc-200 border-b-4 border-b-orange-600 rounded-none"
+          <Button className="w-full h-20 bg-zinc-200 border-b-4 border-b-orange-600 rounded-none focus:bg-slate-600 group"
             onClick={() => setVideo(1)}
           >
-            <Image src="/clients/comil.png" alt="Comil" width={140} height={100} className="invert" />
+            <Image src="/clients/comil.png" alt="Comil" width={140} height={100} className="invert group-focus:invert-0 group-hover:invert-0" />
           </Button>
 
-          <Button className="w-full h-20 bg-zinc-200 border-b-4 border-b-orange-600 rounded-none"
+          <Button className="w-full h-20 bg-zinc-200 border-b-4 border-b-orange-600 rounded-none focus:bg-slate-600"
             onClick={() => setVideo(2)}
           >
             <Image src="/clients/page.png" alt="Pagé" width={140} height={100} />
           </Button>
 
-          <Button className="w-full h-20 text-black text-2xl font-bold bg-zinc-200 border-b-4 border-b-orange-600 rounded-none"
+          <Button className="w-full h-20 text-black text-2xl font-bold bg-zinc-200 border-b-4 border-b-orange-600 rounded-none focus:bg-slate-600 focus:text-white hover:text-white"
             onClick={() => setVideo(3)}
           >
             <p>Oil & Gas</p>

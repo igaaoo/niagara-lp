@@ -84,8 +84,8 @@ export function Navbar() {
         <div className='flex justify-between w-full md:px-20 px-6'>
           <Link href='/' passHref>
             <div className='flex items-center gap-2 py-2'>
-              <Image src="icon.png" width={35} height={35} alt='Niagara Studios' className='invert' />
-              <h1 className='text-2xl md:text-2xl text-white  h-fit p-0 m-0 font-medium whitespace-nowrap flex items-center gap-1 tracking-wide'>
+              <Image src="icon.png" width={35} height={35} alt='Niagara Studios' className='invert size-6 md:size-7' />
+              <h1 className='text-xl md:text-2xl text-white font-bold font-rubik  h-fit p-0 m-0 whitespace-nowrap flex items-center '>
                 NIAGARA STUDIOS
               </h1>
             </div>
@@ -255,7 +255,7 @@ export function Navbar() {
 
           {/* Mobile Navigation */}
           {navbarOpen && (
-            <div className='flex w-full flex-col gap-2 bg-white text-black items-center text-sm absolute left-0 top-[55px]'>
+            <div className='flex w-full flex-col gap-2 bg-white text-black items-center text-sm absolute left-0 top-[60px]'>
               <Accordion type="multiple" className='w-full'>
                 <AccordionItem value="item-1">
                   <AccordionTrigger className='py-2 hover:no-underline hover:bg-black hover:text-white px-10 focus:bg-black focus:text-white'>
@@ -288,7 +288,11 @@ export function Navbar() {
 
                 <AccordionItem value="item-2">
                   <AccordionTrigger className='py-2 hover:no-underline hover:bg-black hover:text-white px-10 focus:bg-black focus:text-white'>
-                    SOLUÇÕES
+                    {
+                      language === 'pt-br' ?
+                        'SOLUÇÕES'
+                        :
+                        'SOLUTIONS'}
                   </AccordionTrigger>
                   <AccordionContent>
                     {language === 'pt-br' ?
@@ -310,6 +314,58 @@ export function Navbar() {
                     }
                   </AccordionContent>
                 </AccordionItem>
+
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className='py-2 hover:no-underline hover:bg-black hover:text-white px-10 focus:bg-black focus:text-white'
+                    onClick={() => {
+                      const element = document.getElementById('clients');
+                      element?.scrollIntoView({
+                        behavior: 'smooth',
+                      });
+                    }}
+                  >
+                    {
+                      language === 'pt-br' ?
+                        'CLIENTES'
+                        :
+                        'CLIENTS'
+                    }
+                  </AccordionTrigger>
+                </AccordionItem>
+
+                <AccordionItem value="item-4">
+                  <AccordionTrigger className='py-2 hover:no-underline hover:bg-black hover:text-white px-10 focus:bg-black focus:text-white'
+                    onClick={() => {
+                      const element = document.getElementById('cases');
+                      element?.scrollIntoView({
+                        behavior: 'smooth',
+                      });
+                    }}
+                  >
+                    CASES
+                  </AccordionTrigger>
+                </AccordionItem>
+
+                <div className='flex gap-4 p-2 w-full justify-center align-middle items-center bg-black text-white hover:cursor-pointer' onClick={() => setLanguage(language === 'en-us' ? 'pt-br' : 'en-us')}>
+                  {
+                    language === 'en-us' ?
+                      <p>Change Language</p>
+                      :
+                      <p>Alterar Idioma</p>
+                  }
+
+                  <div className='size-7 rounded-full  overflow-clip  border border-2 self-center '>
+
+
+                    {
+                      language === 'en-us' ?
+                        <Image src='languages/en-us.png' width={40} height={40} alt='EN-US' className='object-fill w-full h-full' />
+                        :
+                        <Image src='languages/pt-br.png' width={40} height={40} alt='PT-BR' className='object-fill w-full h-full' />
+                    }
+                  </div>
+                </div>
+
               </Accordion>
             </div>
           )}

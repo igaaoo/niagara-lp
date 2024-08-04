@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "./ui/button";
 import { useLanguageContext } from "@/context/LanguageContext";
+import Autoplay from "embla-carousel-autoplay";
 
 const nichesPt = [
   {
@@ -144,8 +145,8 @@ export function Industry() {
         <span className="md:text-5xl font-bold text-xl">
           {
             language === "pt-br" ?
-              "Servicing the following niches" :
-              "Serving the following niches"
+              "Atendendo os seguintes segmentos" :
+              "Serving the following segments"
           }
         </span>
       </div>
@@ -156,6 +157,17 @@ export function Industry() {
           align: "center",
           loop: true,
         }}
+
+        plugins={[
+          Autoplay({
+            delay: 3000,
+            playOnInit: true,
+            stopOnFocusIn: false,
+            stopOnInteraction: false,
+            stopOnLastSnap: false,
+            stopOnMouseEnter: true,
+          }),
+        ]}
       >
         <CarouselContent>
           {niches.map((niche, index) => (

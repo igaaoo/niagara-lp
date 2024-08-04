@@ -88,7 +88,7 @@ export function Footer() {
                     d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                 </svg>
               </span>
-              comercial@niagarastudios.com.br
+              comercial@niagarastudios.com
             </p>
 
             <div className="flex flex-col  w-full justify-center gap-4">
