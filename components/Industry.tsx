@@ -10,6 +10,7 @@ import {
 import { Button } from "./ui/button";
 import { useLanguageContext } from "@/context/LanguageContext";
 import Autoplay from "embla-carousel-autoplay";
+import Link from "next/link";
 
 const nichesPt = [
   {
@@ -179,9 +180,9 @@ export function Industry() {
                     <span className="md:text-2xl text-xl font-semibold leading-6 text-white">
                       {niche.description}
                     </span>
-                    <Button
-                      variant="outline"
-                      className="bg-transparent px-10 border-2 md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30"
+                    <Link
+                      href={niche.href}
+                      className="bg-transparent px-10 p-1 hover:bg-white hover:bg-opacity-20 border-2 md:text-xl rounded-none mt-6 text-white font-semibold bg-black bg-opacity-30"
                       onClick={
                         () => window.location.href = niche.href
                       }
@@ -191,7 +192,7 @@ export function Industry() {
                           "SAIBA MAIS" :
                           "DISCOVER MORE"
                       }
-                    </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               </div>
