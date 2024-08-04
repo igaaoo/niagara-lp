@@ -259,7 +259,12 @@ export function Navbar() {
               <Accordion type="multiple" className='w-full'>
                 <AccordionItem value="item-1">
                   <AccordionTrigger className='py-2 hover:no-underline hover:bg-black hover:text-white px-10 focus:bg-black focus:text-white'>
-                    INDÚSTRIA
+                    {
+                      language === 'pt-br' ?
+                        'INDÚSTRIA'
+                        :
+                        'INDUSTRY'
+                    }
                   </AccordionTrigger>
                   <AccordionContent>
                     {language === 'pt-br' ?
