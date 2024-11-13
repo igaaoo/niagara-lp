@@ -23,6 +23,7 @@ import { Menu, X } from 'lucide-react';
 import { useLanguageContext } from '@/context/LanguageContext';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 const industryItens = [
   { pt: 'Estúdios Virtuais', en: 'Virtual Studios', href: '/solutions/virtual-studios' },
@@ -51,6 +52,7 @@ export function Navbar() {
   const { language, setLanguage } = useLanguageContext();
 
   const pathname = usePathname();
+  const router = useRouter();
 
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -201,23 +203,30 @@ export function Navbar() {
                 <button
                   className='hover:text-amber-400 text-base pr-5  font-medium font-red-hat focus:-text-amber-400'
                   onClick={() => {
-                    const element = document.getElementById('clients');
-                    element?.scrollIntoView({
-                      behavior: 'smooth',
-                    });
+                    if (pathname !== '/') {
+                      router.push('/#clients'); // Redireciona para a seção "clients" na página inicial
+                    } else {
+                      const element = document.getElementById('clients');
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }
                   }}
-                >CLIENTS
+                >
+                  CLIENTS
                 </button>
 
+                {/* Botão CASES */}
                 <button
                   className='hover:text-amber-400 text-base pr-5  font-medium font-red-hat focus:-text-amber-400'
                   onClick={() => {
-                    const element = document.getElementById('cases');
-                    element?.scrollIntoView({
-                      behavior: 'smooth'
-                    });
+                    if (pathname !== '/') {
+                      router.push('/#cases'); // Redireciona para a seção "cases" na página inicial
+                    } else {
+                      const element = document.getElementById('cases');
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }
                   }}
-                >CASES
+                >
+                  CASES
                 </button>
                 {/* <button className='hover:text-amber-400 text-base font-medium font-red-hat focus:-text-amber-400'>PARCEIROS</button> */}
               </NavigationMenuList>
